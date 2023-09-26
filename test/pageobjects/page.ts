@@ -10,6 +10,9 @@ export default class Page {
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
     public open (path?: string) {
-        return browser.url(`https:/linkedin.com/${path}`)
+        if (path != null)
+            return browser.url(`https:/linkedin.com/${path}`)
+        else
+            return browser.url(`https:/linkedin.com`)
     }
 }
