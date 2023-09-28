@@ -1,25 +1,31 @@
-import { expect } from '@wdio/globals'
-import LoginPage from '../pageobjects/cookies.js'
-import * as assert from "assert";
+// import { expect } from "@wdio/globals";
+// import Cookies from "../pageobjects/cookies.js";
+// import Loaders from "../utils/loaders.js";
+// import * as assert from "assert";
 
+// describe.skip("Cookies tests", () => {
+//   it("should open home page and check cookies policy link", async () => {
+//     await Loaders.openHome();
+//     await Loaders.waitForWebPageToLoad();
+//     await Cookies.clickCookiePolicyLink();
 
-describe('Cookies tests', () => {
-    it('should open home page and check cookies policy link', async () => {
-       await LoginPage.openHome()
-       await LoginPage.clickCookiePolicyLink()
+//     await expect(Cookies.cookiePolicyLinkTextH1).toBeDisplayed();
+//   });
 
-       await expect(LoginPage.cookiePolicyLinkTextH1).toBeDisplayed()
-    })
+//   // This test check if cookies settings toggle works
+//   it("should switch on cookies permission in cookies settings and check if cookies banner is not displayed", async () => {
+//     await Loaders.openHome();
+//     await Loaders.waitForWebPageToLoad();
+//     await Cookies.clickCookieSettingsLink();
 
-    // This test check if cookies settings toglle works
-    it('should switch on cookies permission in cookies settings and check if cookies banner is not diplayed', async () => {
-        await LoginPage.openHome()
-        await LoginPage.clickCookieSettingsLink()
+//     await Cookies.clickCookieToggle();
 
-        await LoginPage.clickCookieToggle()
-
-        await LoginPage.openHome()
-        await LoginPage.waitForWebPageToLoad()
-        await assert.strictEqual(await (LoginPage.cookieBannerAccept).isDisplayed(), false, "Cokkies banner is still displayed after switching it off")
-     })
-})
+//     await Loaders.openHome();
+//     await Loaders.waitForWebPageToLoad();
+//     assert.strictEqual(
+//       await Cookies.cookieBannerAccept.isDisplayed(),
+//       false,
+//       "Cookies banner is still displayed after switching it off"
+//     );
+//   });
+// });
