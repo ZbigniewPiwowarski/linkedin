@@ -5,7 +5,7 @@
 // import * as assert from "assert";
 // import { waitForDisplayed } from "webdriverio/build/commands/element.js";
 
-// describe("Navbar tests", () => {
+// describe("Navbar articles tests", () => {
 //   it.skip("should click navbar articles", async () => {
 //     await Loaders.openHome();
 //     await Loaders.waitForWebPageToLoad();
