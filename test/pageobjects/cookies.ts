@@ -53,6 +53,12 @@ class Cookies extends Page {
   public acceptCookies() {
     return this.cookieBannerAccept.click();
   }
+
+  public async acceptCookiesIfDisplayed() {
+    if (await this.cookieBannerAccept.isDisplayed()) {
+      await this.cookieBannerAccept.click();
+    }
+  }
 }
 
 export default new Cookies();

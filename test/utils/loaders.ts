@@ -22,6 +22,10 @@ class Loaders extends Page {
     return super.open();
   }
 
+  public async openHomeNoSessionReloading() {
+    return super.open();
+  }
+
   public waitForWebPageToLoad() {
     return browser.waitUntil(
       () => browser.execute(() => document.readyState === "complete"),

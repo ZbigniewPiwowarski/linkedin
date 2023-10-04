@@ -18,6 +18,7 @@ export default class Page {
     return this.joinLinkedinTitle.isDisplayed();
   }
 
+  // workaround for sometimes Join linkedin page is forced upon user
   public async open(path?: string) {
     if (path != null) {
       await browser.url(`https:/linkedin.com/${path}`);

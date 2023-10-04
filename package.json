@@ -1,8 +1,8 @@
 {
-  "name": "my-new-project",
+  "name": "linkedin-tests",
   "type": "module",
   "devDependencies": {
-    "@wdio/cli": "^8.16.12",
+    "@wdio/cli": "^8.16.18",
     "@wdio/local-runner": "^8.16.12",
     "@wdio/mocha-framework": "^8.16.12",
     "@wdio/spec-reporter": "^8.16.12",
@@ -13,6 +13,6 @@
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "dependencies": {
-    "webdriverio": "^8.16.12"
+    "webdriverio": "^8.16.18"
   }
 }
