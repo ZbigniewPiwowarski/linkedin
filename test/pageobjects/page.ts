@@ -14,6 +14,10 @@ export default class Page {
     return $("h1=Join LinkedIn");
   }
 
+  public get joinLinkedinTitle2() {
+    return $("h1*=Join now");
+  }
+
   public async isJoinLinkedinTitleDisplayed() {
     return this.joinLinkedinTitle.isDisplayed();
   }
@@ -22,14 +26,26 @@ export default class Page {
   public async open(path?: string) {
     if (path != null) {
       await browser.url(`https:/linkedin.com/${path}`);
+      await this.waitForWebPageToLoad();
       if (await this.isJoinLinkedinTitleDisplayed()) {
         return browser.url(`https:/linkedin.com/${path}`);
       }
     } else {
       await browser.url(`https:/linkedin.com`);
+      await this.waitForWebPageToLoad();
       if (await this.isJoinLinkedinTitleDisplayed()) {
         return browser.url(`https:/linkedin.com`);
       }
     }
+  }
+
+  public waitForWebPageToLoad() {
+    return browser.waitUntil(
+      () => browser.execute(() => document.readyState === "complete"),
+      {
+        timeout: 60 * 1000, // 60 seconds
+        timeoutMsg: "Webpage was not fully loaded",
+      }
+    );
   }
 }

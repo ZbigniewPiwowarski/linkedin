@@ -61,7 +61,8 @@ describe("Sign components tests", () => {
     if (
       !(await SignComponents.registerAccountTitle1.isDisplayed()) &&
       !(await SignComponents.registerAccountTitle2.isDisplayed()) &&
-      !(await SignComponents.joinLinkedinTitle.isDisplayed())
+      !(await SignComponents.joinLinkedinTitle.isDisplayed()) &&
+      !(await SignComponents.joinLinkedinTitle2.isDisplayed())
     ) {
       throw new Error(
         "New to linkedin button is not working correctly or title on register page was changed"

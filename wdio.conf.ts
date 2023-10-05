@@ -68,6 +68,7 @@ export const config: Options.Testrunner = {
           "--headless",
           "--disable-gpu",
           "--window-size=1440,735",
+          "--disable-dev-shm-usage"
         ],
       },
     },

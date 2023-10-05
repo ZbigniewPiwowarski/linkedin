@@ -24,5 +24,14 @@
 # how to run tests
 - once you have installed docker type in root directory: 
 docker build -t mytest -f .dockerfile .
+# mac
 - after docker image was built for running tests type:
-docker run -it mytest npm run wdio
+docker run -v $PWD:/app -it mytest npm run wdio
+# windows
+docker run -v %cd%:/app -it mytest npm run wdio
+
+# screenshots
+- tests run in headless mode, above command will add screenshots from failed tests to the root directory of repository as well as run tests
+- names of the screenshots correspond to the name of error
+
+
