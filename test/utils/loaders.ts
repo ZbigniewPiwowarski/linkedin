@@ -19,22 +19,13 @@ class Loaders extends Page {
    */
   public async openHome() {
     await browser.reloadSession();
-    return super.open();
+    await super.open();
   }
 
   public async openHomeNoSessionReloading() {
     return super.open();
   }
 
-  public waitForWebPageToLoad() {
-    return browser.waitUntil(
-      () => browser.execute(() => document.readyState === "complete"),
-      {
-        timeout: 60 * 1000, // 60 seconds
-        timeoutMsg: "Webpage was not fully loaded",
-      }
-    );
-  }
 }
 
 export default new Loaders();
